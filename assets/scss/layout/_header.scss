@@ -1,4 +1,26 @@
-.header{
-  background: #69F0AE;
-  font-size: 64px;
+header{
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: $primary-color;
+  @media (max-width:768px){
+    background-color: #fa0;
+  }
+  @include font-size(20);
+  .nav-list__items{
+    margin-right: 64px;
+    &:last-child{
+      margin-right: 0px;
+    }
+    a{
+      color:white;
+      &:hover{
+        color:$secondary-color;
+      }
+    }
+  }
+  .brand{
+    @include image-replace-text('../assets/images/logo.png');
+    height: 48px;
+    width: 80px;
+  }
 }

@@ -3,8 +3,8 @@
 * RESET...............Set meyerweb css reset & my reset!
 * VARIABLES...........變數
 * MIXIN...............MIXINS here!
-* BASE................一些TAG的基礎樣式
-* LAYOUT&THEME........排版相關(flex,jcc,container...etc)
+* BASE................一些TAG的基礎樣式,包含字體
+* LAYOUT..............排版相關(ex:l-container,l-col-*)
 * MODULES.............模組(如btn,card等等)
 * MAIN-CSS............剩餘主要樣式
 */
@@ -25,13 +25,16 @@
 @import './my-variables';
 
 
+
+/*------------------------------------*\
+    $MIXIN
+\*------------------------------------*/
+@import './mixins';
+
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
 @import './base';
-
-
-
 @import './layout';
 
 /*------------------------------------*\

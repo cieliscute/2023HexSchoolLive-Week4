@@ -162,3 +162,25 @@ $base-gutter-width: 24;
 .l-me-auto {
   margin-right: auto;
 }
+
+
+
+.l-py-3{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.l-me-16{
+  margin-right: 64px;
+}
+
+
+//theme
+.theme-bg__color--primary{
+  background-color: $primary-color;
+}
+
+
+.theme-text__color--white{
+  color:white;
+}

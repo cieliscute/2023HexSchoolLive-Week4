@@ -1,0 +1,26 @@
+//desktop:992~...px
+//pad:768~991px
+//phone:...~767px
+@mixin pad {
+  @media(max-width:991px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media(max-width:767px) {
+    @content;
+  }
+}
+
+@mixin image-replace-text($url) {
+  background: url($url) no-repeat;
+  background-size: cover;
+  display: block;
+  text-indent: 101%;
+  /*首行縮排*/
+  overflow: hidden;
+  /*自動隱藏超出的文字或圖片*/
+  white-space: nowrap;
+  /*希望元素在第一排上面，沒有斷行*/
+}
