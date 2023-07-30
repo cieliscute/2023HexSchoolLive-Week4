@@ -1,0 +1,164 @@
+//  計算字體大小 (TAG:^MIXIN ^font-size ^calc)
+$base-font-size: 16;
+
+@mixin font-size($font-size) {
+  font-size: $font-size +px;
+  font-size: ($font-size / $base-font-size) +rem;
+}
+
+// 計算col寬度 (TAG:^MIXIN ^col ^calc)
+$base-col-width: 86;
+$base-gutter-width: 24;
+
+@mixin col-width($col) {
+  width: ($base-col-width*$col)+(($col - 1)*$base-gutter-width)+px;
+}
+
+.l-container {
+  @include col-width(12);
+  margin: auto;
+}
+
+.l-col-1 {
+  @include col-width(1);
+}
+
+.l-col-2 {
+  @include col-width(2);
+}
+
+.l-col-3 {
+  @include col-width(3);
+}
+
+.l-col-4 {
+  @include col-width(4);
+}
+
+.l-col-5 {
+  @include col-width(5);
+}
+
+.l-col-6 {
+  @include col-width(6);
+}
+
+.l-col-7 {
+  @include col-width(7);
+}
+
+.l-col-8 {
+  @include col-width(8);
+}
+
+.l-col-9 {
+  @include col-width(9);
+}
+
+.l-col-10 {
+  @include col-width(10);
+}
+
+.l-col-11 {
+  @include col-width(11);
+}
+
+.l-col-12 {
+  @include col-width(2);
+}
+
+.l-d-block {
+  display: block;
+}
+
+.l-d-inline-block {
+  display: inline-block;
+}
+
+.l-d-flex {
+  display: flex;
+}
+
+.l-justify-content-between {
+  justify-content: space-between;
+}
+
+.l-justify-content-center {
+  justify-content: center;
+}
+
+.l-align-items-center {
+  align-items: center;
+}
+
+.l-align-items-start {
+  align-items: flex-start;
+}
+
+.l-align-items-end {
+  align-items: flex-end;
+}
+
+.l-flex-column {
+  flex-direction: column;
+}
+
+.l-flex-row {
+  flex-direction: row;
+}
+
+.l-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.l-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.l-align-self-start {
+  align-self: flex-start;
+}
+
+.l-align-self-end {
+  align-self: flex-end;
+}
+
+.l-fs-16 {
+  @include font-size(16)
+}
+
+.l-fs-20 {
+  @include font-size(20)
+}
+
+.l-fs-24 {
+  @include font-size(24)
+}
+
+.l-fs-32 {
+  @include font-size(32)
+}
+
+.l-fs-64 {
+  @include font-size(64)
+}
+
+.l-text-start {
+  text-align: start;
+}
+
+.l-text-center {
+  text-align: center;
+}
+
+.l-text-end {
+  text-align: end;
+}
+
+.l-ms-auto {
+  margin-left: auto;
+}
+
+.l-me-auto {
+  margin-right: auto;
+}

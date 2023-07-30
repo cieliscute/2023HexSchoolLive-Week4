@@ -1,5 +1,42 @@
+/* TOC
+* CONTENTS............You're reading it!
+* RESET...............Set meyerweb css reset & my reset!
+* VARIABLES...........變數
+* MIXIN...............MIXINS here!
+* BASE................一些TAG的基礎樣式
+* LAYOUT&THEME........排版相關(flex,jcc,container...etc)
+* MODULES.............模組(如btn,card等等)
+* MAIN-CSS............剩餘主要樣式
+*/
+/*------------------------------------*\
+    $CONTENTS
+    參考https://github.com/doggy8088/CSS-Guidelines 的CSS撰寫風格
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+@import './reset';
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+@import './my-variables';
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+@import './base';
+
+
+
+@import './layout';
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
 @import './layout/header.scss';
 @import './layout/footer.scss';
-
-
 @import './pages/index.scss';
