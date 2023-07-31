@@ -15,8 +15,14 @@ $base-gutter-width: 24;
 }
 
 .l-container {
-  @include col-width(12);
+  //為了符合到平板版的時候左右仍然有36px的padding,以及在電腦版需要1296px的container,只能先在電腦版就讓padding存在。並且一開始的寬度就調整成加上左右padding的寬度。
+  max-width: 1368px;
   margin: auto;
+  padding: 0px 36px;
+  @include phone{
+    width: 100%;
+    padding: 0px
+  }
 }
 
 .l-col-1 {
@@ -174,6 +180,13 @@ $base-gutter-width: 24;
   margin-right: 64px;
 }
 
+
+.l-h-100{
+  height: 100%;
+}
+.l-w-100{
+  width: 100%;
+}
 
 //theme
 .theme-bg__color--primary{

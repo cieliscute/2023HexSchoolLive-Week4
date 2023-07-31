@@ -2,9 +2,7 @@ header{
   padding-top: 16px;
   padding-bottom: 16px;
   background-color: $primary-color;
-  @media (max-width:768px){
-    background-color: #fa0;
-  }
+  // 
   @include font-size(20);
   .nav-list__items{
     margin-right: 64px;
@@ -12,6 +10,7 @@ header{
       margin-right: 0px;
     }
     a{
+      display: inline-block;
       color:white;
       &:hover{
         color:$secondary-color;
@@ -22,5 +21,34 @@ header{
     @include image-replace-text('../assets/images/logo.png');
     height: 48px;
     width: 80px;
+  }
+  // 手機版的header需要特別調整RWD
+  @include phone{
+    //清空原本header設定的上下padding
+    padding: 0px;
+    h1{
+      padding-top: 16px;
+      padding-bottom: 16px;
+      margin-left: 15px;
+      width: 100%;
+    }
+    .nav-list{
+      width: 100%;
+      flex-wrap: wrap;
+      //使用gap製造白色間距用的，所以需要在ul下一個背景顏色
+      //因為設計稿直接在每個li都下1px border...中間會出現2px..好醜==
+      background-color: #fff;
+      gap:1px;
+      padding-top: 1px;
+      .nav-list__items{
+        margin: 0px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        width:50% ;
+        width: calc((100% - 1px)/2);
+        text-align: center;
+        background-color: $primary-color;
+      }
+    }
   }
 }

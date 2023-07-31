@@ -128,15 +128,18 @@ table {
   border-spacing: 0;
 }
 
+/*   ^^^meyerweb css reset^^^   */
 img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
 }
 
-*{
-  box-sizing: border-box;
-  outline: 1px solid #fa0;
+a {
+  text-decoration: none;
 }
 
-/*   ^^^meyerweb css reset^^^   */
+* {
+  box-sizing: border-box;
+  // outline: 1px solid yellow;
+}

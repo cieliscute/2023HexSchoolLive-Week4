@@ -13,6 +13,12 @@
   }
 }
 
+@mixin respond-to($media) {
+  @media ($media) {
+    @content;
+  }
+}
+
 @mixin image-replace-text($url) {
   background: url($url) no-repeat;
   background-size: cover;
