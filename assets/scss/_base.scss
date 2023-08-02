@@ -7,11 +7,10 @@ https: //fonts.google.com/specimen/Roboto?query=roboto
 思源黑體
 https: //fonts.google.com/noto/specimen/Noto+Sans+TC
 \*------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Roboto&display=swap');
 
 html {
-  font-family: 'Noto Sans TC', 'sans-serif';
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Noto Sans TC','Roboto', 'sans-serif';
 }
 
 .roboto {
@@ -19,4 +18,8 @@ html {
 }
 .noto{
   font-family: 'Noto Sans TC', 'sans-serif';
+}
+
+body{
+  line-height: 1.5;
 }

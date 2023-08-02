@@ -1,18 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-  </head>
-  <body>
-    <%- include('./layout/header'); -%>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>index</title>
+</head>
+
+<body>
+  <!-- 引入header.ejs -->
+  <%- include('./layout/header'); -%>
+    <main>
+      <!-- 首頁Banner -->
+      <section class="banner l-position-relative">
+        <picture>
+          <!-- 決定什麼時候要換圖,這邊設定成991 px以下就會更換成sm版圖片 -->
+          <source media="(max-width:991px)" srcset="../assets/images/home-header-sm.png">
+          <img src="../assets/images/home-header.png" alt="眼鏡男">
+        </picture>
+        <div
+          class="content l-container l-position-absolute l-d-flex l-flex-column l-align-items-end l-justify-content-center">
+          <p>Promise-Desert 2020 早春系列</p>
+          <h2>看得清，才能看得遠</h2>
+          <a href="#" class="btn btn--primary">立即購買</a>
+        </div>
+      </section>
+
+      <!-- 首頁 我們的堅持區塊，"用專業的心，做專業的事" -->
+      <section class="persistence">
+        <div class="l-container">
+          <h2>用專業的心，做專業的事</h2>
+          <div class="l-d-flex l-justify-content-between l-flex-wrap">
+            <div class="wrap">
+              <img src="../assets/images/home-section2-1.png" alt="">
+              <h3>單一價格</h3>
+              <p>無論任何度數皆不需追加費用即可擁有適合自己的薄型球面鏡片。</p>
+            </div>
+            <div class="wrap">
+              <img src="../assets/images/home-section2-2.png" alt="">
+              <h3>20 分鐘即可取件</h3>
+              <p>為了您的寶貴時間著想，以豐富專業知識與技術將結帳到交件的時間縮減至最快 20 分鐘即可完成。</p>
+            </div>
+            <div class="wrap">
+              <img src="../assets/images/home-section2-3.png" alt="">
+              <h3>安心售後服務</h3>
+              <p>我們提供長達 120 天的保固售後服務，不限會員資格皆享有免費深層保養及專業維修服務。</p>
+            </div>
+            <div class="wrap">
+              <img src="../assets/images/home-sectioin2-4.png" alt="">
+              <h3>關於鏡片</h3>
+              <p>使用世界知名頂級品牌，抗UV、防汙鍍膜薄型非球面鏡片。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- 首頁 classic區 -->
+      <section class="classic">
+        <div class="l-container">
+          <h2>經典系列鏡框</h2>
+          <div class="l-d-flex l-justify-content-between l-flex-wrap">
+            <div class="card">
+              <div class="card__header">
+                <a href="#" class="l-d-inline-block"><img src="../assets/images/home-section3-1.png" alt=""></a>
+              </div>
+              <div class="card__body">
+                OPTICAL
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__header">
+                <a href="#" class="l-d-inline-block"><img src="../assets/images/home-section3-2.png" alt=""></a>
+              </div>
+              <div class="card__body">
+                SUNGLASSES
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__header">
+                <a href="#" class="l-d-inline-block"><img src="../assets/images/home-section3-3.png" alt=""></a>
+              </div>
+              <div class="card__body">
+                FUNCTIONAL
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 首頁 collaboration 聯名區塊 -->
+      <section class="collaboration">
+        <div class="l-container">
+          <h2>聯名設計鏡框</h2>
+          <div class="l-d-flex">
+            <div class="card">
+              <div class="card__header"></div>
+              <div class="card__body"></div>
+            </div>
+            <div class="card">
+              <div class="card__header"></div>
+              <div class="card__body"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </main>
 
 
     <%- include('./layout/footer'); -%>
 
 
-    <script type="module" src="../main.js"></script>
-  </body>
+      <script type="module" src="../main.js"></script>
+</body>
+
 </html>

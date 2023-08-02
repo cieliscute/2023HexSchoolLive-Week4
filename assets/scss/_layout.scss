@@ -21,7 +21,7 @@ $base-gutter-width: 24;
   padding: 0px 36px;
   @include phone{
     width: 100%;
-    padding: 0px
+    padding:0px 14px
   }
 }
 
@@ -192,8 +192,17 @@ $base-gutter-width: 24;
 .theme-bg__color--primary{
   background-color: $primary-color;
 }
-
-
 .theme-text__color--white{
   color:white;
+}
+
+
+
+
+//others
+.l-position-relative{
+  position: relative;
+}
+.l-position-absolute{
+  position: absolute;
 }
