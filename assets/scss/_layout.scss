@@ -11,7 +11,8 @@ $base-col-width: 86;
 $base-gutter-width: 24;
 
 @mixin col-width($col) {
-  width: ($base-col-width*$col)+(($col - 1)*$base-gutter-width)+px;
+  // width: ($base-col-width*$col)+(($col - 1)*$base-gutter-width)+px;
+  width: calc($col / 12)\%;
 }
 
 .l-container {
