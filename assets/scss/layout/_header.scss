@@ -24,7 +24,7 @@ header{
     }
   }
   .brand{
-    @include image-replace-text('../assets/images/logo.png');
+    @include image-replace-text('../images/logo.png');
     height: 48px;
     width: 80px;
   }
