@@ -1,0 +1,177 @@
+.l-container--fluid {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+}
+
+.l-container {
+  //為了符合到平板版的時候左右仍然有36px的padding,以及在電腦版需要1296px的container,只能先在電腦版就讓padding存在。並且一開始的寬度就調整成加上左右padding的寬度。
+  max-width: 1296px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+
+  @include phone {
+    width: 100%;
+    padding: 0px 14px
+  }
+}
+
+.l-row {
+  display: flex;
+  flex-wrap: wrap;
+  // 使用負的gutter去抵銷掉最左右方的col-padding
+  margin-left: -($gutter-width / 2);
+  margin-right: -($gutter-width / 2);
+}
+
+// 設定nogutters,所以下一層兒子的col,不需要設定padding，相對的row也不用去回補因為col的padding所造成的左右方空白，所以原本設定的負值margin需要改為0
+.l-row--nogutters {
+  margin-left: 0px;
+  margin-right: 0px;
+  >[class*='l-col-'] {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+// 使用佔位符去設定一個通用的樣式，之後再用@extend去套用避免重複撰寫
+%col {
+  position: relative;
+  width: 100%;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+}
+// grid-system的每個col依序設定通用樣式
+@each $key,
+$value in $grid-breakpoints {
+  @for $var from 1 through $grid-sum {
+    @if not $value {
+      .l-col-#{$var} {
+        @extend %col;
+      }
+    }
+
+    @else {
+      .l-col-#{$key}-#{$var} {
+        @extend %col;
+      }
+    }
+  }
+}
+
+// grid-system依序設定每個col所要佔據的寬度
+@each $key,
+$value in $grid-breakpoints {
+  @if not $value {
+    @for $var from 1 to $grid-sum {
+      .l-col-#{$var} {
+        max-width: 100% * ($var / $grid-sum);
+        flex: 0 0 (100% * ($var / $grid-sum));
+      }
+    }
+  }
+
+  @else {
+    @media screen and (min-width: $value) {
+      @for $var from 1 to $grid-sum {
+        .l-col-#{$key}-#{$var} {
+          max-width: 100% * ($var / $grid-sum);
+          flex: 0 0 (100% * ($var / $grid-sum));
+        }
+      }
+    }
+  }
+}
+
+
+.l-d-block {
+  display: block;
+}
+.l-d-inline-block {
+  display: inline-block;
+}
+.l-d-flex {
+  display: flex;
+}
+.l-justify-content-between {
+  justify-content: space-between;
+}
+.l-justify-content-center {
+  justify-content: center;
+}
+.l-align-items-center {
+  align-items: center;
+}
+.l-align-items-start {
+  align-items: flex-start;
+}
+.l-align-items-end {
+  align-items: flex-end;
+}
+.l-flex-column {
+  flex-direction: column;
+}
+.l-flex-row {
+  flex-direction: row;
+}
+.l-flex-wrap {
+  flex-wrap: wrap;
+}
+.l-flex-nowrap {
+  flex-wrap: nowrap;
+}
+.l-align-self-start {
+  align-self: flex-start;
+}
+.l-align-self-end {
+  align-self: flex-end;
+}
+.l-fs-16 {
+  @include font-size(16)
+}
+.l-fs-20 {
+  @include font-size(20)
+}
+.l-fs-24 {
+  @include font-size(24)
+}
+.l-fs-32 {
+  @include font-size(32)
+}
+.l-fs-64 {
+  @include font-size(64)
+}
+.l-text-start {
+  text-align: start;
+}
+.l-text-center {
+  text-align: center;
+}
+.l-text-end {
+  text-align: end;
+}
+.l-h-100 {
+  height: 100%;
+}
+.l-w-100 {
+  width: 100%;
+}
+
+
+
+
+
+
+
+//others
+.l-position-relative {
+  position: relative;
+}
+
+.l-position-absolute {
+  position: absolute;
+}

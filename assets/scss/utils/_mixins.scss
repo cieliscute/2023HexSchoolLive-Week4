@@ -1,0 +1,124 @@
+//desktop:769px~
+//pad:376px~768px
+//phone:~375px
+
+//要修改斷點請到_my-variables.scss中修改
+@mixin pad {
+  @media(min-width:map-get($grid-breakpoints,md)) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media(min-width:map-get($grid-breakpoints,sm)) {
+    @content;
+  }
+}
+
+@mixin respond-to($media) {
+  @media ($media) {
+    @content;
+  }
+}
+
+// 文字取代圖片
+@mixin image-replace-text($url) {
+  background: url($url) no-repeat;
+  background-size: cover;
+  display: block;
+  /*首行縮排*/
+  text-indent: 101%;
+  /*自動隱藏超出的文字或圖片*/
+  overflow: hidden;
+  /*希望元素在第一排上面，沒有斷行*/
+  white-space: nowrap;
+}
+
+//  計算字體大小 (TAG:^MIXIN ^font-size ^calc)
+$base-font-size: 16;
+@mixin font-size($font-size) {
+  font-size: $font-size (+px);
+  font-size: calc($font-size / $base-font-size) (+rem);
+}
+
+// 計算col寬度 (TAG:^MIXIN ^col ^calc)
+@mixin col-width($col) {
+  width: percentage($col / 12);
+}
+
+//計算utilities spacing 用，避免產生重複樣式
+@mixin generate($pro, $side, $spacValue) {
+  @if $side =='' {
+    @if $pro =='m' {
+      margin: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding: $spacValue !important;
+    }
+  }
+
+  @if $side =='t' {
+    @if $pro =='m' {
+      margin-top: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding-top: $spacValue !important;
+    }
+  }
+
+  @if $side =='b' {
+    @if $pro =='m' {
+      margin-bottom: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding-bottom: $spacValue !important;
+    }
+  }
+
+  @if $side =='l' {
+    @if $pro =='m' {
+      margin-left: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding-left: $spacValue !important;
+    }
+  }
+
+  @if $side =='r' {
+    @if $pro =='m' {
+      margin-right: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding-right: $spacValue !important;
+    }
+  }
+
+  @if $side =='x' {
+    @if $pro =='m' {
+      margin-left: $spacValue !important;
+      margin-right: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding-left: $spacValue !important;
+      padding-right: $spacValue !important;
+    }
+  }
+
+  @if $side =='y' {
+    @if $pro =='m' {
+      margin-top: $spacValue !important;
+      margin-bottom: $spacValue !important;
+    }
+
+    @if $pro =='p' {
+      padding-top: $spacValue !important;
+      padding-bottom: $spacValue !important;
+    }
+  }
+}

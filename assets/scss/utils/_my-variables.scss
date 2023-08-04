@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    bs5預設的斷點
+    bootstrap是mobile-first，所以沒有設定
+    會是<576的部分
+            $grid-breakpoints: (
+              '': false,
+              sm: 576px,
+              md: 768px,
+              lg: 992px,
+              xl: 1200px,
+              xxl: 1400px
+            );
+\*------------------------------------*/
+
+
+
+// 斷點設定
+$grid-breakpoints: (
+  '': false,
+  sm: 375px,
+  md: 768px,
+  lg: 1200px
+);
+// 定義每個col中間需要有多少的間距
+$gutter-width: 30px;
+// 用來定義grid system總共有幾個col
+$grid-sum: 12;
+
+
+
+
+// 計算字體大小 (TAG:^MIXIN ^font-size ^calc)
+$base-font-size: 16;
+
+
+$primary-color:#aa0601;
+$secondary-color:#fbf2f2;
+$text-info:#650300;

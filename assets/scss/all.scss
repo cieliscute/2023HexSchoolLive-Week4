@@ -1,48 +1,111 @@
 /* TOC
 * CONTENTS............You're reading it!
-* RESET...............Set meyerweb css reset & my reset!
-* VARIABLES...........變數
+* BASE................採用Meyerweb CSS reset 以及一些全站共通設定(eg:自體)
+* VARIABLES...........變數都放在這邊!!
 * MIXIN...............MIXINS here!
-* BASE................一些TAG的基礎樣式,包含字體
-* LAYOUT..............排版相關(ex:l-container,l-col-*)
-* MODULES.............模組(如btn,card等等)
-* MAIN-CSS............剩餘主要樣式
+* LAYOUT..............排版相關,使用l-當作前綴(ex:l-container,l-col-*)
+* MODULES.............引入所有模組的位置(eg:module-card)，參閱modules資料夾
+* PAGES...............各頁面剩餘樣式修改
 */
 /*------------------------------------*\
     $CONTENTS
     參考https://github.com/doggy8088/CSS-Guidelines 的CSS撰寫風格
+    
+    *BASE
+        reset...........meyerweb css reset
+        base............字體設定，全站共通設定
+    *VARIABLES
+        my-variables....全部的變數設定都在這邊，引入的時候一定要放在其他scss之前
+                        因為像是mixin以及spacing都有使用到變數的部分
+                        另外斷點的設定也包含在裡面，所以layout中的col計算也會使用到
+                        加一個my-前綴是因為保留使用bootstrap的時候的彈性
+    *MIXIN
+        mixins..........計算字體，計算col寬度，產生spacing設定等等都放在這邊
+                        需要放在variables的下一個引入
+    *LAYOUT
+        layout..........裡面的設定採用OOCSS的方式去規劃，使用l-當作前綴
+                        包含l-container,l-row,l-col-*-*等等排版用的設定
+                        如果需要使用flex的一些設定或是文字的對齊也是放在裡面
+        spacing.........margin,padding的內容會包含在這邊，因為是通用類別所以沒有特別設定前綴
+                        大家應該都看得懂...吧..
+        theme...........一些theme的設定放在這邊
+    *MODULES
+        modules.........所有module的引入檔案,裡面只會有@import，每個@import都是一個module
+                        如果需要修改請找到該module去修改就好
+                        module的部分會使用module-當作前綴(避免與margin的m-混淆..)
+    *PAGES
+        ................其他頁面的各別設定
 \*------------------------------------*/
+
+
+
+
+
+
+
+
+
 
 
 /*------------------------------------*\
-    $RESET
+    $BASE
 \*------------------------------------*/
 @import './reset';
+@import './base/base';
+
+
+
 
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
-@import './my-variables';
+@import './utils/my-variables';
+
+
+
+
+
 
 
 
 /*------------------------------------*\
     $MIXIN
 \*------------------------------------*/
-@import './mixins';
+@import './utils/mixins';
 
-/*------------------------------------*\
-    $BASE
-\*------------------------------------*/
-@import './base';
+
+
+
+
+
+
+
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
-@import './layout';
+@import './utils/layout';
+@import './utils/spacing';
+@import './utils/theme'
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*------------------------------------*\
     $MODULES
 \*------------------------------------*/
-@import './modules';
+@import './modules/modules';
+
+
+
 
 
 
