@@ -28,6 +28,25 @@ $grid-sum: 12;
 
 
 
+// spacing設定
+$spacies: (
+  '0': 0px,
+  '1': 4px,
+  '2': 8px,
+  '3': 12px,
+  '4': 16px,
+  '5': 20px,
+  '6': 24px,
+  '7': 28px,
+  '8': 32px,
+  '9': 40px,
+  '10':80px,
+  'auto': auto,
+);
+$property: 'm', 'p';
+$sides: '', 't', 'b', 'l', 'r', 'x', 'y';
+
+
 
 // 計算字體大小 (TAG:^MIXIN ^font-size ^calc)
 $base-font-size: 16;
