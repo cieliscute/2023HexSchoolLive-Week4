@@ -18,11 +18,10 @@
 \*------------------------------------*/
 .banner {
   img {
-    //css reset中原本設定max-width:100%,但是這樣設定，因為圖片來源比991px還要小，會有空白，所以需要將這個設定拿掉
+    //css reset中原本設定max-width:100%,但是這樣設定，因為圖片來源很小，會有空白，所以需要將這個設定拿掉
     max-width: unset;
     width: 100%;
   }
-
   .content {
     // 同時設定了position:absolute跟l-container，所以在電腦版的時候的右邊距離是由l-container的padding:0px 36px推出來的
     right: 0px;
@@ -32,14 +31,13 @@
   }
 
   p {
-    font-size: 36px;
+    font-size: 16;
     color: $text-info;
   }
 
   h2 {
-    font-size: 64px;
+    font-size: 24px;
     color: $text-info;
-    margin-bottom: 4px;
     font-weight: bold;
   }
 
@@ -47,35 +45,15 @@
     font-size: 20px;
   }
 
-  // 覺得中間跳有點大...自己寫一個中間值
-  //phone:<768px 
-  @include phone {
-    .content {
-      // 因為l-container已經在手機版設定width:100%;了，所以這邊使用padding來推出右邊的距離
-      // padding-right: 24px;
+  @include pad{
+    p{
+      font-size: 36px;
     }
-
-    p {
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 48px;
-      margin-bottom: 8px;
+    h2{
+      font-size: 64px;
     }
   }
 
-  //620以下才是設計稿上的字體大小
-  @include respond-to('max-width:620px') {
-    p {
-      font-size: 16px;
-    }
-
-    h2 {
-      font-size: 24px;
-      padding: 8px;
-    }
-  }
 }
 
 
@@ -83,10 +61,6 @@
     $PERSISTENCE
 \*------------------------------------*/
 .persistence {
-  background-color: $secondary-color;
-  padding-top: 80px;
-  padding-bottom: 80px;
-
   h2 {
     font-size: 48px;
     text-align: center;

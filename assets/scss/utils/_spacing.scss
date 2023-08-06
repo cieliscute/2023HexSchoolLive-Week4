@@ -18,7 +18,6 @@ $value in $grid-breakpoints {
     @media screen and (min-width: $value) {
       @each $pro in $property {
         @each $side in $sides {
-
           @each $spacKey,
           $spacValue in $spacies {
             .#{$pro}#{$side}-#{$key}-#{$spacKey} {

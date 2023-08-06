@@ -15,7 +15,7 @@
   // padding-right: $gutter-width / 2;
   padding-left: 14px;
   padding-right: 14px;
-  @include phone{
+  @include pad{
     padding: 0px 36px;
   }
   @include pad {
@@ -27,8 +27,9 @@
   display: flex;
   flex-wrap: wrap;
   // 使用負的gutter去抵銷掉最左右方的col-padding
-  margin-left: -($gutter-width / 2);
-  margin-right: -($gutter-width / 2);
+  // 但是這次的設計稿看起來好像不用這樣做..已經用.l-container去限制容器範圍了
+  // margin-left: -($gutter-width / 2);
+  // margin-right: -($gutter-width / 2);
 }
 
 // 設定nogutters,所以下一層兒子的col,不需要設定padding，相對的row也不用去回補因為col的padding所造成的左右方空白，所以原本設定的負值margin需要改為0
@@ -162,6 +163,23 @@ $value in $grid-breakpoints {
 }
 .l-w-100 {
   width: 100%;
+}
+
+
+.l-w-sm-100{
+  @include phone{
+    width: 100%;
+  }
+}
+.l-w-lg-auto{
+  @include desktop{
+    width: auto;
+  }
+}
+.l-w-md-auto{
+  @include pad{
+    width: auto;
+  }
 }
 
 

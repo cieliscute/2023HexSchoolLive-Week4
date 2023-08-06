@@ -3,6 +3,11 @@
 //phone:~375px
 
 //要修改斷點請到_my-variables.scss中修改
+@mixin desktop{
+  @media(min-width:map-get($grid-breakpoints,lg)){
+    @content;
+  }
+}
 @mixin pad {
   @media(min-width:map-get($grid-breakpoints,md)) {
     @content;
@@ -77,7 +82,7 @@
     }
   }
 
-  @if $side =='l' {
+  @if $side =='s' {
     @if $pro =='m' {
       margin-left: $spacValue !important;
     }
@@ -87,7 +92,7 @@
     }
   }
 
-  @if $side =='r' {
+  @if $side =='e' {
     @if $pro =='m' {
       margin-right: $spacValue !important;
     }

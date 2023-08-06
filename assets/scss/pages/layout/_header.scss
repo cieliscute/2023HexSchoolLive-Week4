@@ -1,5 +1,61 @@
+/*  本頁詢問助教問題～
+詢問TA:另外想詢問像這頁這樣比較多細節的設定，是不是就不需要拘泥OOCSS的觀念？
+這樣是不是乾脆這一頁全部集中在_header.scss內設定，html的class就只要下結構的class名稱就好？
+否則像是我的a>h1這個部分，有使用到ms-4 ms-md-0這種寫法，可是我又有在scss中動到container的設定（16行)，這樣padding就會分散在兩個地方，感覺日後不好維護..
+
+另外navbar的設計我思考了很久到底要怎麼寫比較恰當..我有自己調整過，可能跟設計稿(使用padding去留白)的方式有所不同。這部分如果助教有什麼建議也可以用嚴格的標準檢視一下！
+*/
+
+// 設定0~767px狀態下，nav-list__items中間的白色間距離
+$nav-list-gap:1px;
+
+
+
 header{
+  .l-container{
+    // 為了符合讓掉下去的nav-list-items可以左右佔滿，只能先取消掉容器的padding...
+    padding: 0px;
+  }
   .brand{
-    @include image-replace-text('./assets/logo.png')
+    @include image-replace-text('../images/logo.png');
+    width: 72px;
+    height: 80px;
+    background-size: contain;
+    background-position: center center;
+  }
+  .nav-list{
+    // 整個ul設定背景白色，再將li設定成紅色填滿，製造出邊界感
+    background-color: #fff;
+    // gap設定1px,這個1px跟下方的.nav-list__items寬度計算相關
+    gap:$nav-list-gap ;
+    // 最後加上一個上方padding,製造出與logo的邊界
+    padding-top: $nav-list-gap;
+    // 下方邊界？ 感覺加了好像比較協調...
+    padding-bottom: $nav-list-gap;
+  }
+  .nav-list__items{
+    background-color: $primary-color;
+    width: calc((100% - $nav-list-gap)/2);
+    a{
+      line-height: 50px;
+    }
+  }
+  @include pad{
+    .l-container{
+      // 因為mobile first,前面將container的padding取消，這邊需要設定回去
+      padding: 0 36px;
+    }
+    .nav-list{
+      // 需要將在0~767px為了補出白色上下邊界的padding給取消
+      padding: 0px;
+      background-color: $primary-color;
+    }
+    .nav-list__items{
+      width: auto;
+      a{
+      // 想詢問ＴＡ！！！這邊除了設定line-heigh跟高度一樣，還有其他方法可以讓a標籤同時撐開高度，文字又要水平置中嗎？
+      line-height: 80px;
+      }
+    }
   }
 }

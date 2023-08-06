@@ -2,7 +2,15 @@
 .theme-bg__color--primary {
   background-color: $primary-color;
 }
-
+.theme-bg__color--white{
+  background-color: #fff;
+}
+.theme-bg__color--secondary{
+  background-color: $secondary-color;
+}
 .theme-text__color--white {
   color: white;
+}
+.theme-text__color--white--hover:hover{
+  color:#bbb;
 }

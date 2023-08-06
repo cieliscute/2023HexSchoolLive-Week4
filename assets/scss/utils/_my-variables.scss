@@ -22,7 +22,7 @@ $grid-breakpoints: (
   lg: 1200px
 );
 // 定義每個col中間需要有多少的間距
-$gutter-width: 30px;
+$gutter-width: 24px;
 // 用來定義grid system總共有幾個col
 $grid-sum: 12;
 
@@ -46,7 +46,7 @@ $spacies: (
   'auto': auto,
 );
 $property: 'm', 'p';
-$sides: '', 't', 'b', 'l', 'r', 'x', 'y';
+$sides: '', 't', 'b', 's', 'e', 'x', 'y';
 
 
 

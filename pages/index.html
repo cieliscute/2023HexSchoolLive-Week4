@@ -15,23 +15,23 @@
       <!-- 首頁Banner -->
       <section class="banner l-position-relative">
         <picture>
-          <!-- 決定什麼時候要換圖,這邊設定成991 px以下就會更換成sm版圖片 -->
-          <source media="(max-width:991px)" srcset="../assets/images/home-header-sm.png">
-          <img src="../assets/images/home-header.png" alt="眼鏡男">
+          <!-- 決定什麼時候要換圖,這邊設定成1200px以下就會更換成sm版圖片 -->
+          <source media="(min-width:1200px)" srcset="../assets/images/home-header.png">
+          <img src="../assets/images/home-header-sm.png" alt="眼鏡男">
         </picture>
         <div
           class="content l-container l-position-absolute l-d-flex l-flex-column l-align-items-end l-justify-content-center">
           <p>Promise-Desert 2020 早春系列</p>
-          <h2>看得清，才能看得遠</h2>
-          <a href="#" class="btn btn--primary">立即購買</a>
+          <h2 class="mb-2">看得清，才能看得遠</h2>
+          <a href="#" class="module-btn module-btn--primary">立即購買</a>
         </div>
       </section>
 
       <!-- 首頁 我們的堅持區塊，"用專業的心，做專業的事" -->
-      <section class="persistence">
+      <section class="persistence theme-bg__color--secondary py-10 py-md-20">
         <div class="l-container">
-          <h2>用專業的心，做專業的事</h2>
-          <div class="l-d-flex l-justify-content-between l-flex-wrap">
+          <h2 class="l-text-center">用專業的心，做專業的事</h2>
+          <div class="l-row m-0">
             <div class="wrap">
               <img src="../assets/images/home-section2-1.png" alt="">
               <h3>單一價格</h3>
@@ -84,7 +84,7 @@
                 <a href="#" class="l-d-inline-block"><img src="../assets/images/home-section3-3.png" alt=""></a>
               </div>
               <div class="card__body">
-                FUNCTIONAL
+                <!-- FUNCTIONAL -->
               </div>
             </div>
           </div>
