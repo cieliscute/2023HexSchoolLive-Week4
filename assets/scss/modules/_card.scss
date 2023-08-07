@@ -1,0 +1,28 @@
+.module-card {
+  width: 100%;
+}
+
+.module-card--shadow {
+  box-shadow: 0px 2px 6px #00000029;
+}
+
+
+.module-card__body {
+  padding: 16px 16px 0px 16px;
+  min-height: 152px;
+}
+.module-card__footer{
+  padding: 16px;
+}
+
+.module-card__body__title {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.module-card__body__content {
+}
+.module-card__footer__date {
+  color: #707070;
+  font-size: 14px;
+}

@@ -1,6 +1,7 @@
-//desktop:769px~
-//pad:376px~768px
-//phone:~375px
+//desktop:1200px~
+//pad:768px~1199px
+//phone:375~767px
+//unset:0~374px
 
 //要修改斷點請到_my-variables.scss中修改
 @mixin desktop{

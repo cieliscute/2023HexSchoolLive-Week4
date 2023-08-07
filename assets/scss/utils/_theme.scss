@@ -14,3 +14,26 @@
 .theme-text__color--white--hover:hover{
   color:#bbb;
 }
+.theme-text__color--info{
+  color:$info;
+}
+
+
+.theme-date{
+  font-size: 14px;
+  color:#707070;
+
+}
+
+
+.theme-text__weight--bold{
+  font-weight: 700;
+}
+.theme-text__weight--black{
+  font-weight:900 ;
+}
+
+
+.theme-text__style--italic{
+  font-style: italic;
+}
